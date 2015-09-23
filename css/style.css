@@ -1,0 +1,69 @@
+body {
+	background-color: #749B96;
+	font-size: 16px;
+}
+
+h1 {
+	text-align: center;
+	color: #49BCB8;
+	margin-top: 2em;
+}
+h2 {
+	text-align: center;
+	color: #C4ECE6;
+	font-weight: normal;
+}
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+}
+li {
+	display: table-cell;
+}
+.fa-money {
+	color: #FED700;
+	position:absolute; 
+ 	left:0;
+ 	margin: 1.5em 0 0 0.5em;
+}
+ .help { 
+ 	position:absolute; 
+ 	right:0;
+	display: block;
+	margin: 5em 0 0;
+}
+
+.help p {
+	margin: 0 1em 0.5em 0;
+	color: #9A3F3E;
+}
+
+.help i {
+	color:#9A3F3E;
+	margin: 0 auto;
+}
+
+.answerBox:hover {
+	background-color: #9A3F3E;
+}
+
+.answerDiv {
+	width: 30em;
+	margin: 3em auto;
+}
+.answerBox {
+	width: 15em;
+	height: 2em;
+	background-color: #78D5C3;
+	margin: 0.5em;
+	color: #C4ECE6;
+}
+
+.letter {
+	font-size: 1.5em;
+	color: #49BCB8;
+	margin: 0.5em 0.5em;
+}
+
+
