@@ -10,46 +10,247 @@
 	<script type="text/javascript" src="js/app.js"></script>
 </head>
 <body>
-	
-	<i class="fa fa-money fa-3x"></i>
-	
+	<div class="overlay-back"></div>
+	<div class="getStarted overlay">
+		<h2>Welcome to Quiz App!</h2>
+		<button>Start</button>
+	</div>	
+	<div class="gameOver overlay">
+		<h1> GAME OVER!</h1>
+	</div>
+	<div class="askFriend overlay">
+		<h1>Ask our Expert</h1>
+		<h2 class="friendAnswer"><img src="images/friend.png" alt="friend">Greetings! I'm the resident expert, Gary.<br /><br />Luckly have a Ph.D. in this subject. After much analysis, I have concluded that the correct answer is <span></span>.</h2>
+	</div>
+	<div class="correctAnswer overlay">
+		<h2>You are correct!</h2>
+		<i class="fa fa-trophy fa-5x"></i>
+	</div>
+
+	<div class="wrongAnswer overlay">
+		<h2>That's the wrong answer!</h2>
+		<i class="fa fa-thumbs-o-down fa-5x"></i>
+	</div>
+
+	<div class="counterDiv">
+		<p><span class="counter">0</span>s</p>
+	</div>
 	<div class="help">
-		<p>Life Lines</p>
-		<i class="fa fa-phone-square fa-3x"></i> <br />
+		<h2>Life Lines</h2>
+		<i class="fa fa-phone-square fa-3x"></i>
+		<p>Ask our Expert</p>
+		<br />
 		<i class="fa fa-star-half fa-3x"></i>
+		<p>50% of Answers</p>
 	</div>
+	<div class="questionPage">
 
-	<h1>Question 1</h1>
-	<h2 class="question">What state is San Francisco in?</h2>
+		<h1>Question <span class="qNum">1</span></h1>
 
-	<div class="answerDiv">
-		<ul>
-			<li>
-				<div class="answerBox">
-					<span class="letter">A</span><span class="answerA">California</span>
-				</div>
-			</li>
-			<li>
-				<div class="answerBox">
-					<span class="letter">B</span> 
-					<span class="answerB"> New Mexico</span>
-				</div>
-			</li>
-			<div class="rightSide">
+		<div class="question">
+			<h2>Which Apollo mission landed the first humans on the Moon?</h2>
+		</div>
+
+		<div class="answerDiv">
+			<div class="q0">
+				<ul>
+					<li>
+						<a href="#">
+							<div class="answerBox">
+								<span class="letter">A</span><span class="answer">Apollo 9</span>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="answerBox">
+								<span class="letter">B</span> 
+								<span class="answer">Apollo 11</span>
+							</div>
+						</a>
+					</li>
+					<br />
+					<li>
+						<a href="#">
+							<div class="answerBox">
+								<span class="letter">C</span>
+								<span class="answer">Apollo 3</span>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="answerBox">
+								<span class="letter">D</span>
+								<span class="answer">Apollo 15</span>
+							</div>
+						</a>
+					</li>
+			</ul>
+		</div>
+		<div class="q1">
+			<ul>
 				<li>
-					<div class="answerBox">
-						<span class="letter">C</span>
-						<span class="answerC"> New York</span>
-					</div>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">A</span><span class="answer">Lithuania</span>
+						</div>
+					</a>
 				</li>
 				<li>
-					<div class="answerBox">
-						<span class="letter">D</span> 	
-						<span class="answerD"> China</span>
-					</div>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">B</span> 
+							<span class="answer">Russia</span>
+						</div>
+					</a>
 				</li>
-		    <div>
-		</ul>
+				<br />
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">C</span>
+							<span class="answer">Ukraine</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">D</span> 	
+							<span class="answer">Moldova</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="q2">
+			<ul>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">A</span><span class="answer">Mount Vesuvius</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">B</span> 
+							<span class="answer">Mount St. Helens</span>
+						</div>
+					</a>
+				</li>
+				<br />
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">C</span>
+							<span class="answer">Mount Etna</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">D</span>
+							<span class="answer">Mount Pinatubo</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="q3">
+			<ul>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">A</span><span class="answer">United States</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">B</span> 
+							<span class="answer">China</span>
+						</div>
+					</a>
+				</li>
+				<br />
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">C</span>
+							<span class="answer">Brazil</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">D</span>
+							<span class="answer">Canada</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="q4">
+			<ul>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">A</span><span class="answer">55%</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">B</span> 
+							<span class="answer">68%</span>
+						</div>
+					</a>
+				</li>
+				<br />
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">C</span>
+							<span class="answer">85%</span>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="answerBox">
+							<span class="letter">D</span>
+							<span class="answer">97%</span>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
+		<div class="questionNumber">
+			<ul>
+				<li>
+					<p class="num0">1</p>
+				</li>	
+				<li>
+					<p class="num1">2</p>
+				</li>
+				<li>
+					<p class="num2">3</p>		
+				</li>	
+				<li>
+					<p class="num3">4</p>
+				</li>
+				<li>
+					<p class="num4">5</p>
+				</li>
+			</ul>		
+		</div>
 </body>
 </html>
