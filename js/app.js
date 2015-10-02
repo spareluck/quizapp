@@ -1,5 +1,5 @@
 // Each question should be stored as a JavaScript object
-// store your list of questions in an array.
+// store your list of answers in an array.
 //function timer() {
 	//	var counter = 0;
 	//	setInterval(function () {
@@ -40,6 +40,7 @@ $(document).ready(function() {
 
     var numberCorrect = 0;
     var currentQuestion = 0;
+    var numberLifeline = 0;
 
 	// Start game, go to first question
 	$('.getStarted button').on('click', function(){
@@ -51,10 +52,25 @@ $(document).ready(function() {
 
 	$(".answerDiv a").on('click', checkUserGuess);
 
+	$(".help .expertLink").on('click', askExpert);
+
+	function askExpert() {
+		$(".overlay-back").css("display", "inline");
+	    $(".askExpert").css("display", "inline");
+	    $(".expertAnswer").append(questions[currentQuestion].answer);
+	  		
+	    $(".okGary").on('click', function() {
+		    $(".askExpert").css("display", "none");
+		    $(".overlay-back").css("display", "none");
+		});
+		$(".expertLink").addClass("usedLifeLine");
+	    numberLifeline++;
+	}
+
 	function gameOver() {
 	    $(".gameOver").css("display", "inline");
+		$(".gameOver").append("<p>You answered " + numberCorrect + " questions correct. </p><p>Number of Life Lines: " + numberLifeline + "</p>");
 		$(".overlay-back").css("display", "inline");
-		$(".gameOver").append("<p>You got " + numberCorrect + " questions correct! </p><p>You </p>");
 	}
 
 	function nextQuestion() {
@@ -117,10 +133,3 @@ $(document).ready(function() {
 	
 });
 		
-	// Function to put trophy or thumbs down in number box
-	
-	//Function to display next question
-
-	//Function display next set of answers
-
-	// Function to user life lines

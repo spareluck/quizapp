@@ -18,9 +18,10 @@
 	<div class="gameOver overlay">
 		<h1> GAME OVER!</h1>
 	</div>
-	<div class="askFriend overlay">
+	<div class="askExpert overlay">
 		<h1>Ask our Expert</h1>
-		<h2 class="friendAnswer"><img src="images/friend.png" alt="friend">Greetings! I'm the resident expert, Gary.<br /><br />Luckly have a Ph.D. in this subject. After much analysis, I have concluded that the correct answer is <span></span>.</h2>
+		<h2 class="friendAnswer"><img src="images/friend.png" alt="friend">Greetings! I'm the resident expert, Gary.<br /><br />Luckly I have a Ph.D. in this subject. After much analysis, I have concluded that the correct answer is <span class="expertAnswer"></span>.</h2>
+		<button class="okGary">Got it!</button>
 	</div>
 	<div class="correctAnswer overlay">
 		<h2>You are correct!</h2>
@@ -28,7 +29,7 @@
 	</div>
 
 	<div class="wrongAnswer overlay">
-		<h2>That's the wrong answer!</h2>
+		<h2>Sorry, wrong answer!</h2>
 		<i class="fa fa-thumbs-o-down fa-5x"></i>
 	</div>
 
@@ -37,11 +38,15 @@
 	</div>
 	<div class="help">
 		<h2>Life Lines</h2>
-		<i class="fa fa-phone-square fa-3x"></i>
-		<p>Ask our Expert</p>
+		<a href='#' class="expertLink">	
+			<i class="fa fa-phone-square fa-3x"></i>
+			<p>Ask our Expert</p>
+		</a>
 		<br />
-		<i class="fa fa-star-half fa-3x"></i>
-		<p>50% of Answers</p>
+		<a href="#">
+			<i class="fa fa-star-half fa-3x"></i>
+			<p>50% of Answers</p>
+		</a>
 	</div>
 	<div class="questionPage">
 

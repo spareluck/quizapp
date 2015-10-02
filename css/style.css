@@ -36,6 +36,11 @@ button, .button, input[type=submit] {
   position: relative;
 }
 
+.okGary {
+	background-color: #78b9d5;
+	margin: -1em 3.5em 0;
+}
+
 .questionPage {
 	margin-top: 6em;
 }
@@ -81,16 +86,16 @@ button, .button, input[type=submit] {
  	margin: 1.6em 0 0 2em;
  	color: #C4ECE6;
 }
-.askFriend {
+.askExpert {
 	border: 10px #78b9d5 solid;
 	background-color: #C4ECE6;
 	display: none;
 }
-.askFriend h1 {
+.askExpert h1 {
 	margin-left: 1.25em;
 	color: #78b9d5;
 }
-.askFriend img {
+.askExpert img {
 	float: left;
 	margin: 0 0.5em 0 1.5em;
 	width: 120px;
@@ -101,14 +106,20 @@ button, .button, input[type=submit] {
 	font-size: 1.1em;
 	line-height: 1.5;
 }
+
+.expertAnswer {
+	font-weight: bold;
+}
 .correctAnswer {
 	border: 10px #d5c378 solid;
 	text-align: center;
 	background-color: #78b9d5;
+	border-radius: 50%;
 	display: none;
 }
 .correctAnswer h2, .wrongAnswer h2 {
 	padding: .6em 0;
+	margin-top: 1.5em;
 	font-size: 2.5em;
 }
 .correctAnswer i, .wrongAnswer i {
@@ -119,6 +130,7 @@ button, .button, input[type=submit] {
 	border: 10px  #9A3F3E solid;
 	text-align: center;
 	background-color: #78b9d5;
+	border-radius: 50%;
 	display: none;
 }
 .answerDiv li {
@@ -180,6 +192,13 @@ button, .button, input[type=submit] {
 .help i {
 	color:#78b9d5;
 	padding-left: 0.75em;
+}
+.usedLifeLine {
+	pointer-events: none;
+}
+
+.usedLifeLine i, .usedLifeLine p {
+	color: #9A3F3E;
 }
 .answerBox:hover {
 	background-color: #9A3F3E;
