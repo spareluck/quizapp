@@ -1,6 +1,6 @@
 html, body {
-    width  : 100%;
-    height : 100%;
+    width: 100%;
+    height: 100%;
 }
 body {
 	background-color: #749B96;
@@ -25,20 +25,31 @@ a {
 }
 button, .button, input[type=submit] {
   border: 0;
-  border-radius: 10px;
-  background: #49BCB8;
-  color: #C4ECE6;
-  padding: 10px 20px;
-  font-weight: bold;
-  font-size: 20px;
   text-decoration: none;
   display: inline-block; /* needed for anchors */
   position: relative;
 }
-
+.getStarted button {
+ 	background: #49BCB8;
+  	color: #C4ECE6;
+  	padding: 10px 20px;
+  	border-radius: 10px;
+  	font-weight: bold;
+  	font-size: 20px;
+}
+.help button {
+	background: none;
+	border: 0;
+	text-align: center;
+}
 .okGary {
 	background-color: #78b9d5;
+	color: #C4ECE6;
 	margin: -1em 3.5em 0;
+	padding: 10px 20px;
+  	border-radius: 10px;
+  	font-weight: bold;
+  	font-size: 20px;
 }
 
 .questionPage {
@@ -51,15 +62,15 @@ button, .button, input[type=submit] {
 	display: none;
 }
 .overlay-back {
-    position   : absolute;
-    top        : 0;
-    left       : 0;
-    width      : 100%;
-    height     : 100%;
-    background : #000;
-    opacity    : 0.6;
-    filter     : alpha(opacity=60);
-    z-index    : 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+    z-index: 5;
 }
 .overlay {
     position: absolute;
@@ -191,10 +202,6 @@ button, .button, input[type=submit] {
 }
 .help i {
 	color:#78b9d5;
-	padding-left: 0.75em;
-}
-.usedLifeLine {
-	pointer-events: none;
 }
 
 .usedLifeLine i, .usedLifeLine p {
@@ -215,6 +222,10 @@ button, .button, input[type=submit] {
 	background-color: #78D5C3;
 	margin: 0.25em;
 	color: #C4ECE6;
+}
+.answerDiv button {
+	background: none;
+	text-align: left;
 }
 .letter {
 	font-size: 1.5em;

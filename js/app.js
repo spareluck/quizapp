@@ -1,106 +1,131 @@
-// Each question should be stored as a JavaScript object
-// store your list of answers in an array.
-//function timer() {
-	//	var counter = 0;
-	//	setInterval(function () {
-	//		counter++;
-	//	}, 1000);
-	//	$(".counter").text(counter);
-	//}
 
-	
 $(document).ready(function() {
 
+	//grab buttons that are not correct. Stick them in an array
+	//find function that randomly picks item from array
+	//then add class and disable buttons. 
+
+	// Finish game over function
+	// create game reset function
+	// replace CSS additions in JS with classnames created in CSS
+
+	
 	var questions = [{
         question: "Which Apollo mission landed the first humans on the Moon?",
-        answer: "Apollo 11",
+        choices: ["Apollo 9", "Apollo 11", "Apollo 3", "Apollo 15"],
+        answer: 1, 
+        letter: "B",
         qNum : 0, 
         },
         {
         question: "The reactor at the site of the Chernobyl nuclear disaster is now in which country?",
-        answer: "Ukraine",
+        choices: ["Lithuania", "Russia","Ukraine", "Moldova"],
+        answer: 2,
+        letter: "C",
         qNum : 1,
         },
         {
         question: "Which volcano is best known for its eruption in AD 79 that led to the destruction of the Roman cities of Pompeii and Herculaneum?",
-        answer: "Mount Vesuvius",
+        choices: ["Mount Vesuvius","Mount St. Helens", "Mount Etna", "Mount Pinatubo"],
+        answer: 0,
+        letter: "A",
         qNum : 2,
         },
         {
         question: "What country has the largest japanese population outside of Japan?",
-        answer: "Brazil",
+        choices: ["United States", "China", "Brazil", "Canada"],
+        answer: 2,
+        letter: "C",
         qNum : 3,
         },
         {
         question: "Oceans hold what percentage of the Earth's surface water?",
-        answer: "97%",
+        choices: ["55%","68%", "85%", "97%"],
+        answer: 3,
+        letter: "D",
         qNum : 4,
     }]
-    
-
+   
     var numberCorrect = 0;
     var currentQuestion = 0;
     var numberLifeline = 0;
+    var counter = 0;
+	
+	function timer() {
+		return setInterval(function () {
+	    	counter++;
+	    	$(".counter").text(counter);
+		}, 1000);
+	}
 
+	// clearTimeout pass value returned by timer to start clock over
+	 
 	// Start game, go to first question
 	$('.getStarted button').on('click', function(){
-		$(".getStarted").css("display", "none");
-		$(".overlay-back").css("display", "none");
-		// Add function to start timer
+		hideModal("getStarted");
+		timer();
 	});
 
 
-	$(".answerDiv a").on('click', checkUserGuess);
+	$(".answerDiv button").on('click', checkUserGuess);
 
 	$(".help .expertLink").on('click', askExpert);
 
+	function showModal(className) {
+		$("." + className).css("display", "inline");
+		$(".overlay-back").css("display", "inline");	
+	}
+
+	//add css in style.css in class, then add class. Do not add css in JS
+	
+	function hideModal(className) {
+		$("." + className).css("display", "none");
+		$(".overlay-back").css("display", "none");
+	}
 	function askExpert() {
-		$(".overlay-back").css("display", "inline");
-	    $(".askExpert").css("display", "inline");
-	    $(".expertAnswer").append(questions[currentQuestion].answer);
+		var $expertLink = $(".expertLink");
+	    showModal("askExpert");
+	    $(".expertAnswer").append(questions[currentQuestion].letter + " " + questions[currentQuestion].choices[questions[currentQuestion].answer]);
 	  		
 	    $(".okGary").on('click', function() {
-		    $(".askExpert").css("display", "none");
-		    $(".overlay-back").css("display", "none");
+		    hideModal("askExpert");
 		});
-		$(".expertLink").addClass("usedLifeLine");
+		$expertLink.addClass("usedLifeLine")
+		$expertLink[0].disabled = true;
 	    numberLifeline++;
 	}
 
 	function gameOver() {
-	    $(".gameOver").css("display", "inline");
-		$(".gameOver").append("<p>You answered " + numberCorrect + " questions correct. </p><p>Number of Life Lines: " + numberLifeline + "</p>");
-		$(".overlay-back").css("display", "inline");
+	    showModal("gameOver");
+		$(".gameOver").append("<p>Number of correct answers: " + numberCorrect + "</p><p>Number of Life Lines: " + numberLifeline + "</p>");
+		// Add how many seconds player finished quiz in
+		// Stop timer! 
+		// Reset game after 5 seconds
 	}
 
 	function nextQuestion() {
 		
 		if (currentQuestion < 5) {
 			$(".question h2").text(questions[currentQuestion].question);
-			$(".q" + currentQuestion).css("display", "inline");
 			$(".qNum").text(currentQuestion + 1);
 		}
 		else {
-			gameOver();
+			setTimeout(gameOver,2000);
 		}
 	}
 
 	function correctAnwerMessage() {
-		$(".correctAnswer").css("display", "inline");
-		$(".overlay-back").css("display", "inline");
+		showModal("correctAnswer");
 		setTimeout(function () {
-		    $(".correctAnswer").css("display", "none");
-		    $(".overlay-back").css("display", "none");
-		     }, 2000);
+		    hideModal("correctAnswer");
+		}, 2000);
 	}
 
 	function wrongAnswerMessage() {
-		$(".wrongAnswer").css("display", "inline");
-		$(".overlay-back").css("display", "inline");
+		showModal("wrongAnswer");
 		setTimeout(function () {
-		    $(".wrongAnswer").css("display", "none");
-		    $(".overlay-back").css("display", "none");
-		     }, 2000);
+		    hideModal("wrongAnswer");
+		    }, 2000);
 	}
 
 	function updateQuestionNumberCorrect() {
@@ -112,14 +137,14 @@ $(document).ready(function() {
 	}
 
 	function updateChoices() {
-		$(".q" + currentQuestion).css("display", "none");
-		currentQuestion++
-		$(".q" + currentQuestion).css("display", "inline");
+		for(var i = 0; i < 4; i++) {
+			$(".choice" + i).text(questions[currentQuestion].choices[i]);
+		}	
 	}
 
 	function checkUserGuess() {
-		var userAnswer = $(this).find(".answer").text();
-		if(userAnswer === questions[currentQuestion].answer) {
+		var userAnswer = $(this).find(".text").text();
+		if(userAnswer === questions[currentQuestion].choices[questions[currentQuestion].answer]) {
 			correctAnwerMessage();
 			updateQuestionNumberCorrect();
 			numberCorrect++
@@ -127,9 +152,12 @@ $(document).ready(function() {
 			wrongAnswerMessage();
 			updateQuestionNumberWrong();
 		}
-		updateChoices();
+		currentQuestion++
 		nextQuestion();
+		updateChoices();
 	}
 	
+	// Create newGame function after game ends to reset game. 
+
 });
 		
