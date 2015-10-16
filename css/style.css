@@ -220,12 +220,16 @@ button, .button, input[type=submit] {
 	width: 15em;
 	height: 2em;
 	background-color: #78D5C3;
-	margin: 0.25em;
+	margin: 0;
 	color: #C4ECE6;
 }
 .answerDiv button {
 	background: none;
 	text-align: left;
+	height: 1.75em;
+	width: 14.5em;
+	margin: 0 0.5em 0;
+	padding: 0;
 }
 .letter {
 	font-size: 1.5em;
@@ -236,14 +240,25 @@ button, .button, input[type=submit] {
 	border: 10px #49BCB8 solid;
 	text-align: center;
 	background-color: #749B96;
-	display:none;
+	display: none;
 }
 .gameOver h1 {
-	margin-top: 2em;
+	margin-top: 1em;
 	color: #9A3F3E;
 }
 .gameOver p {
 	font-size: 1.5em;
 	color: #C4ECE6;
 }
+.gameOver span {
+	font-size: 1.65em;
+	color: #49BCB8;
+}
+.show {
+	display: inline;
+}
+.hide {
+	display: none;
+}
+
 
